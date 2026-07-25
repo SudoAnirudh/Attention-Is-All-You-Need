@@ -30,6 +30,18 @@ yarn-error.log*
 coverage/
 .vitest/
 
+# Local Specification Documents (untracked)
+PRD.md
+IMPLEMENTATION_PLAN.md
+AGENTS.md
+TECH_STACK.md
+RULES.md
+docs/PRD.md
+docs/IMPLEMENTATION_PLAN.md
+docs/AGENTS.md
+docs/TECH_STACK.md
+docs/RULES.md
+
 # OS / Editor files
 .DS_Store
 *.pem
@@ -38,3 +50,4 @@ coverage/
 !.vscode/tasks.json
 !.vscode/launch.json
 .idea/
+
