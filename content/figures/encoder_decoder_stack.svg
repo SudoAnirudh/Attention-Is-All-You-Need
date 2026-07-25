@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 950" width="100%" height="100%" style="background-color: #1a1b26; font-family: system-ui, sans-serif;">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bb9af7" />
+      <stop offset="100%" stop-color="#9d7cd8" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7aa2f7" />
+      <stop offset="100%" stop-color="#3d59a1" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dcfff" />
+      <stop offset="100%" stop-color="#2ac3de" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9e64" />
+      <stop offset="100%" stop-color="#e0af68" />
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7aa2f7" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9ece6a" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="45" text-anchor="middle" fill="#c0caf5" font-size="24" font-weight="bold">Transformer Architecture (Vaswani et al., 2017)</text>
+  <text x="400" y="70" text-anchor="middle" fill="#565f89" font-size="14" font-family="monospace">Original Redrawn SVG Visualization — Tokyo Night Design</text>
+
+  <!-- ================= ENCODER (LEFT) ================= -->
+  <g transform="translate(60, 100)">
+    <!-- Container Box -->
+    <rect x="0" y="110" width="300" height="520" rx="16" fill="#24283b" stroke="#414868" stroke-width="2" />
+    <text x="20" y="140" fill="#bb9af7" font-size="16" font-weight="bold">Encoder Stack (N = 6)</text>
+
+    <!-- Sub-layer 2: Feed Forward -->
+    <rect x="30" y="170" width="240" height="50" rx="8" fill="url(#orangeGrad)" opacity="0.9" />
+    <text x="150" y="200" text-anchor="middle" fill="#1a1b26" font-size="14" font-weight="bold">Feed Forward</text>
+
+    <rect x="30" y="235" width="240" height="40" rx="8" fill="#1f2335" stroke="#7aa2f7" stroke-width="1.5" />
+    <text x="150" y="260" text-anchor="middle" fill="#c0caf5" font-size="13">Add &amp; Norm</text>
+
+    <!-- Sub-layer 1: Multi-Head Self-Attention -->
+    <rect x="30" y="360" width="240" height="55" rx="8" fill="url(#purpleGrad)" opacity="0.9" />
+    <text x="150" y="393" text-anchor="middle" fill="#1a1b26" font-size="14" font-weight="bold">Multi-Head Attention</text>
+
+    <rect x="30" y="430" width="240" height="40" rx="8" fill="#1f2335" stroke="#7aa2f7" stroke-width="1.5" />
+    <text x="150" y="455" text-anchor="middle" fill="#c0caf5" font-size="13">Add &amp; Norm</text>
+
+    <!-- Residual Connections -->
+    <path d="M 150 495 L 150 470" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 150 430 L 150 415" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 150 360 L 150 275" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 150 235 L 150 220" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 150 170 L 150 145" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+
+    <!-- Residual Loop Self-Attn -->
+    <path d="M 150 510 C 20 510 20 450 30 450" fill="none" stroke="#7dcfff" stroke-width="2" stroke-dasharray="4,4" />
+    <!-- Residual Loop FFN -->
+    <path d="M 150 300 C 20 300 20 255 30 255" fill="none" stroke="#7dcfff" stroke-width="2" stroke-dasharray="4,4" />
+
+    <!-- Inputs & Positional Encoding -->
+    <rect x="50" y="670" width="200" height="45" rx="8" fill="url(#cyanGrad)" />
+    <text x="150" y="697" text-anchor="middle" fill="#1a1b26" font-size="14" font-weight="bold">Input Embedding</text>
+
+    <!-- Positional Encoding Circle -->
+    <circle cx="150" cy="600" r="22" fill="#ff9e64" stroke="#c0caf5" stroke-width="2" />
+    <text x="150" y="605" text-anchor="middle" fill="#1a1b26" font-size="16" font-weight="bold">+</text>
+    <text x="210" y="605" fill="#ff9e64" font-size="12" font-family="monospace">Positional Encoding</text>
+
+    <!-- Flow Arrows -->
+    <path d="M 150 780 L 150 715" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 150 670 L 150 622" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 150 578 L 150 510" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+
+    <!-- Input text label -->
+    <rect x="50" y="780" width="200" height="35" rx="6" fill="#16161e" stroke="#565f89" />
+    <text x="150" y="802" text-anchor="middle" fill="#c0caf5" font-size="14" font-family="monospace">Inputs ("Je suis étudiant")</text>
+  </g>
+
+  <!-- ================= DECODER (RIGHT) ================= -->
+  <g transform="translate(440, 100)">
+    <!-- Output Softmax & Linear -->
+    <rect x="50" y="0" width="200" height="35" rx="6" fill="#9ece6a" />
+    <text x="150" y="22" text-anchor="middle" fill="#1a1b26" font-size="14" font-weight="bold">Output Probabilities</text>
+
+    <rect x="50" y="50" width="200" height="35" rx="6" fill="#1f2335" stroke="#9ece6a" stroke-width="1.5" />
+    <text x="150" y="72" text-anchor="middle" fill="#c0caf5" font-size="13">Softmax &amp; Linear</text>
+    <path d="M 150 110 L 150 85" stroke="#9ece6a" stroke-width="2" marker-end="url(#arrow-green)" />
+    <path d="M 150 50 L 150 35" stroke="#9ece6a" stroke-width="2" marker-end="url(#arrow-green)" />
+
+    <!-- Container Box -->
+    <rect x="0" y="110" width="300" height="520" rx="16" fill="#24283b" stroke="#414868" stroke-width="2" />
+    <text x="20" y="140" fill="#7dcfff" font-size="16" font-weight="bold">Decoder Stack (N = 6)</text>
+
+    <!-- Sub-layer 3: Feed Forward -->
+    <rect x="30" y="170" width="240" height="40" rx="8" fill="url(#orangeGrad)" opacity="0.9" />
+    <text x="150" y="195" text-anchor="middle" fill="#1a1b26" font-size="13" font-weight="bold">Feed Forward</text>
+
+    <rect x="30" y="220" width="240" height="35" rx="8" fill="#1f2335" stroke="#7aa2f7" stroke-width="1.5" />
+    <text x="150" y="242" text-anchor="middle" fill="#c0caf5" font-size="12">Add &amp; Norm</text>
+
+    <!-- Sub-layer 2: Cross Attention (Enc-Dec) -->
+    <rect x="30" y="300" width="240" height="45" rx="8" fill="url(#blueGrad)" opacity="0.9" />
+    <text x="150" y="328" text-anchor="middle" fill="#1a1b26" font-size="13" font-weight="bold">Multi-Head Cross Attention</text>
+
+    <rect x="30" y="355" width="240" height="35" rx="8" fill="#1f2335" stroke="#7aa2f7" stroke-width="1.5" />
+    <text x="150" y="377" text-anchor="middle" fill="#c0caf5" font-size="12">Add &amp; Norm</text>
+
+    <!-- Sub-layer 1: Masked Multi-Head Self-Attention -->
+    <rect x="30" y="440" width="240" height="45" rx="8" fill="url(#purpleGrad)" opacity="0.9" />
+    <text x="150" y="467" text-anchor="middle" fill="#1a1b26" font-size="13" font-weight="bold">Masked Multi-Head Attention</text>
+
+    <rect x="30" y="495" width="240" height="35" rx="8" fill="#1f2335" stroke="#7aa2f7" stroke-width="1.5" />
+    <text x="150" y="517" text-anchor="middle" fill="#c0caf5" font-size="12">Add &amp; Norm</text>
+
+    <!-- Flow Arrows -->
+    <path d="M 150 578 L 150 530" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 150 440 L 150 390" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 150 300 L 150 255" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 150 170 L 150 110" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+
+    <!-- Inputs & Positional Encoding -->
+    <rect x="50" y="670" width="200" height="45" rx="8" fill="url(#cyanGrad)" />
+    <text x="150" y="697" text-anchor="middle" fill="#1a1b26" font-size="14" font-weight="bold">Output Embedding</text>
+
+    <circle cx="150" cy="600" r="22" fill="#ff9e64" stroke="#c0caf5" stroke-width="2" />
+    <text x="150" y="605" text-anchor="middle" fill="#1a1b26" font-size="16" font-weight="bold">+</text>
+
+    <path d="M 150 780 L 150 715" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 150 670 L 150 622" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)" />
+
+    <rect x="50" y="780" width="200" height="35" rx="6" fill="#16161e" stroke="#565f89" />
+    <text x="150" y="802" text-anchor="middle" fill="#c0caf5" font-size="13" font-family="monospace">Outputs ("I am a student")</text>
+  </g>
+
+  <!-- Cross-Attention Connection Arrow Encoder -> Decoder -->
+  <path d="M 360 210 L 470 422" fill="none" stroke="#7dcfff" stroke-width="3" stroke-dasharray="6,4" marker-end="url(#arrow)" />
+  <text x="415" y="300" text-anchor="middle" fill="#7dcfff" font-size="12" font-weight="bold" transform="rotate(-62 415 300)">K, V Keys &amp; Values</text>
+</svg>

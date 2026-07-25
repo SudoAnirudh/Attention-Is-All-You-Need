@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 650" width="100%" height="100%" style="background-color: #1a1b26; font-family: system-ui, sans-serif;">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bb9af7" />
+      <stop offset="100%" stop-color="#9d7cd8" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7aa2f7" />
+      <stop offset="100%" stop-color="#3d59a1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9ece6a" />
+      <stop offset="100%" stop-color="#739a45" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9e64" />
+      <stop offset="100%" stop-color="#e0af68" />
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7aa2f7" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="225" y="40" text-anchor="middle" fill="#c0caf5" font-size="20" font-weight="bold">Scaled Dot-Product Attention</text>
+  <text x="225" y="65" text-anchor="middle" fill="#565f89" font-size="13" font-family="monospace">Figure 2(a) — Original Redrawn SVG</text>
+
+  <!-- Input Q, K, V Labels -->
+  <rect x="50" y="550" width="70" height="40" rx="8" fill="#bb9af7" />
+  <text x="85" y="575" text-anchor="middle" fill="#1a1b26" font-size="16" font-weight="bold">Q</text>
+
+  <rect x="190" y="550" width="70" height="40" rx="8" fill="#7aa2f7" />
+  <text x="225" y="575" text-anchor="middle" fill="#1a1b26" font-size="16" font-weight="bold">K</text>
+
+  <rect x="330" y="550" width="70" height="40" rx="8" fill="#7dcfff" />
+  <text x="365" y="575" text-anchor="middle" fill="#1a1b26" font-size="16" font-weight="bold">V</text>
+
+  <!-- MatMul 1 (Q x K^T) -->
+  <rect x="100" y="440" width="150" height="45" rx="8" fill="url(#purpleGrad)" />
+  <text x="175" y="468" text-anchor="middle" fill="#1a1b26" font-size="15" font-weight="bold">MatMul (Q · Kᵀ)</text>
+
+  <!-- Scale (1 / sqrt(d_k)) -->
+  <rect x="100" y="360" width="150" height="45" rx="8" fill="url(#orangeGrad)" />
+  <text x="175" y="388" text-anchor="middle" fill="#1a1b26" font-size="14" font-weight="bold">Scale (1 / √dₖ)</text>
+
+  <!-- Mask (Optional Causal) -->
+  <rect x="100" y="280" width="150" height="45" rx="8" fill="#24283b" stroke="#ff9e64" stroke-width="1.5" stroke-dasharray="4,4" />
+  <text x="175" y="308" text-anchor="middle" fill="#ff9e64" font-size="14" font-weight="bold">Mask (Optional)</text>
+
+  <!-- Softmax -->
+  <rect x="100" y="200" width="150" height="45" rx="8" fill="url(#blueGrad)" />
+  <text x="175" y="228" text-anchor="middle" fill="#1a1b26" font-size="15" font-weight="bold">Softmax</text>
+
+  <!-- MatMul 2 (Softmax x V) -->
+  <rect x="100" y="120" width="230" height="45" rx="8" fill="url(#greenGrad)" />
+  <text x="215" y="148" text-anchor="middle" fill="#1a1b26" font-size="15" font-weight="bold">MatMul (Weights · V)</text>
+
+  <!-- Connections -->
+  <!-- Q to MatMul 1 -->
+  <path d="M 85 550 C 85 500 135 500 135 485" fill="none" stroke="#bb9af7" stroke-width="2.5" marker-end="url(#arrow)" />
+  <!-- K to MatMul 1 -->
+  <path d="M 225 550 C 225 500 215 500 215 485" fill="none" stroke="#7aa2f7" stroke-width="2.5" marker-end="url(#arrow)" />
+
+  <!-- MatMul 1 -> Scale -> Mask -> Softmax -->
+  <path d="M 175 440 L 175 405" stroke="#7aa2f7" stroke-width="2.5" marker-end="url(#arrow)" />
+  <path d="M 175 360 L 175 325" stroke="#7aa2f7" stroke-width="2.5" marker-end="url(#arrow)" />
+  <path d="M 175 280 L 175 245" stroke="#7aa2f7" stroke-width="2.5" marker-end="url(#arrow)" />
+
+  <!-- Softmax -> MatMul 2 -->
+  <path d="M 175 200 L 175 165" stroke="#7aa2f7" stroke-width="2.5" marker-end="url(#arrow)" />
+
+  <!-- V -> MatMul 2 -->
+  <path d="M 365 550 L 365 200 C 365 175 300 175 300 165" fill="none" stroke="#7dcfff" stroke-width="2.5" marker-end="url(#arrow)" />
+
+  <!-- Output Arrow -->
+  <path d="M 215 120 L 215 80" stroke="#9ece6a" stroke-width="3" marker-end="url(#arrow)" />
+  <text x="215" y="70" text-anchor="middle" fill="#9ece6a" font-size="14" font-weight="bold">Output Matrix</text>
+</svg>

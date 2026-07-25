@@ -1,0 +1,36 @@
+@import 'katex/dist/katex.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-tokyo-bg: #1a1b26;
+  --color-tokyo-surface: #24283b;
+  --color-tokyo-text: #c0caf5;
+}
+
+body {
+  background-color: #1a1b26;
+  color: #c0caf5;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbars matching Tokyo Night theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #16161e;
+}
+::-webkit-scrollbar-thumb {
+  background: #292e42;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #414868;
+}
