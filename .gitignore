@@ -14,6 +14,20 @@ next-env.d.ts.bak
 # Local Research (non-shipped PDF extracts)
 research/
 
+# Spec & Prompt Docs (Untracked)
+PRD.md
+IMPLEMENTATION_PLAN.md
+AGENTS.md
+TECH_STACK.md
+RULES.md
+IMPLEMENTATION_PROMPT.md
+docs/PRD.md
+docs/IMPLEMENTATION_PLAN.md
+docs/AGENTS.md
+docs/TECH_STACK.md
+docs/RULES.md
+docs/IMPLEMENTATION_PROMPT.md
+
 # Environment files
 .env
 .env*.local
@@ -30,18 +44,6 @@ yarn-error.log*
 coverage/
 .vitest/
 
-# Local Specification Documents (untracked)
-PRD.md
-IMPLEMENTATION_PLAN.md
-AGENTS.md
-TECH_STACK.md
-RULES.md
-docs/PRD.md
-docs/IMPLEMENTATION_PLAN.md
-docs/AGENTS.md
-docs/TECH_STACK.md
-docs/RULES.md
-
 # OS / Editor files
 .DS_Store
 *.pem
@@ -50,4 +52,3 @@ docs/RULES.md
 !.vscode/tasks.json
 !.vscode/launch.json
 .idea/
-
